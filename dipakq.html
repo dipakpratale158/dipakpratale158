@@ -3,62 +3,97 @@
 
 <body>
     <form onsubmit="SaveToLocalStorage(event)">
-        <label>Name</label>
-        <input type="text" name="usename" required/>
         <label>EmailId</label>
-        <input type="email" name="emailid"  required/>
+
+        <input id="email" type="email" name="emailid"  required/>
+        <label>Name</label>
+        <input id="username" type="text" name="username" required/>
         <label>PhoneNumber</label>
-        <input type="tel" name="phonenumber"/>
+        <input  id="phonenumber" type="tel" name="phonenumber"/>
     
         <button>Submit</button>
-        <br />
+        
 
     </form>
     <ul id="listitem"></ul>
     <script>
 
         function SaveToLocalStorage(event){
-            //event.preventDefault();
-        const name=event.target.usename.value
-        const ema=event.target.emailid.value
-        const phonen=event.target.phonenumber.value
+            event.preventDefault();
+        const name=event.target.username.value
+        const email=event.target.emailid.value
+        const phonneumber=event.target.phonenumber.value
         // localStorage.setItem('name',name)
         // localStorage.setItem('ema',ema)
         // localStorage.setItem('phonen',phonen)
 const obj={
+    email,
     name,
-    ema,
-    phonen
+    phonneumber
     
 }
-localStorage.setItem(obj.ema,JSON.stringify(obj))
- adddetail(obj)
+localStorage.setItem(obj.email,JSON.stringify(obj))
+ showuserscreen(obj)
         }
+   window.addEventListener("DOMContentLoaded",()=>{
+const localStorageobj=localStorage
+const localStoragekey=Object.keys(localStorageobj)
 
-        function adddetail(obj){
-            const parentElement=document.getElementById('listitem')
-           const chiledelement=document.createElement('li')
-            //if we have replace
-         
-            // parentElement.innerHTML=`${obj.name} - ${obj.ema} - ${obj.phonen} `
-    
-            //parentElement.innerHTML=parentElement.innerHTML+`${obj.name} - ${obj.ema} - ${obj.phonen} `
+for(var i=0;i<localStoragekey.length;i++){
+  const key=localStoragekey[i]
+  const userDetailString=localStorageobj[key]
+  const userDSetailObj=JSON.parse(userDetailString)
+  showuserscreen(userDSetailObj)
+}
+   })
 
-          chiledelement.textContent=`${obj.name} - ${obj.ema} - ${obj.phonen} `
-         parentElement.appendChild(chiledelement)
+   function showuserscreen(user){
+    document.getElementById('email').value=''
+    document.getElementById('username').value=''
+    document.getElementById('phonenumber').value=''
+    if(localStorage.getItem(user.email)!==null){
+removeuserfromscreen(user.email)
+    }
+const parrentNode=document.getElementById('listitem')
+const childHtml=`<li id=${user.email}> ${user.name}-${user.email}
+    <button onclick=deleteuser('${user.email}')> delete user </button>
+    <button onclick=edituserdetail('${user.email}','${user.name}','${user.phonenumber}')> edit user</button>
+        </li>`
 
-          const deletebutton=document.createElement('input')
- deletebutton.type="button"
- deletebutton.value='Delete'
+        parrentNode.innerHTML=parrentNode.innerHTML+childHtml
+    }
 
- deletebutton.onclick=() =>{
-     localStorage.removeItem(obj.ema)
-    parentElement.removeChild(chiledelement)
- }
-    chiledelement.appendChild(deletebutton)
-    parentElement.appendChild(chiledelement)
 
-        }
+//edit user
+   function edituserdetail(emailid,name,phonenumber){
+    document.getElementById('email').value=emailid
+    document.getElementById('username').value=name
+    document.getElementById('phonenumber').value=phonenumber
+    deleteuser(emailid)
+
+   }
+
+
+//deleate user
+function deleteuser(emailid){
+    localStorage.removeItem(emailid)
+    removeuserfromscreen(emailid)
+}
+
+
+//
+
+function removeuserfromscreen(emailid){
+    const parrentNode=document.getElementById('listitem')
+   const childnodetobedeleted=document.getElementById(emailid)
+   if(childnodetobedeleted){
+    parrentNode.removeChild(childnodetobedeleted)
+   }
+}
+
+   
+
+        
     </script>
 </body>
 </html>
