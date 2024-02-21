@@ -1,99 +1,32 @@
+sql
 
-<html>
+WITH 
+    t1 AS (
+        SELECT
+             COUNT(DISTINCT c14) AS counsler
+        FROM
+            Receipt_Head_Wise1
+        WHERE
+            c14 = 'Prachi Anil Ukirde'
+    ),
+    t2 AS (
+        SELECT
+            DISTINCT c16, c14
+        FROM
+            Receipt_Head_Wise1
+        WHERE
+            c14 = 'Prachi Anil Ukirde'
+     
+    )
+    ,
+    t3 as (select c16,
+           COUNT(c14) as no_of_amount
+           from t2
+           group by c16)
+           
+           SELECT * from t3
+           join  t1 on  t1.counsler=t3.no_of_amount
 
-<body>
-    <form onsubmit="SaveToLocalStorage(event)">
-        <label>EmailId</label>
+output: c16    no_of_amounth  counsler
+        100    1              1
 
-        <input id="email" type="email" name="emailid"  required/>
-        <label>Name</label>
-        <input id="username" type="text" name="username" required/>
-        <label>PhoneNumber</label>
-        <input  id="phonenumber" type="tel" name="phonenumber"/>
-    
-        <button>Submit</button>
-        
-
-    </form>
-    <ul id="listitem"></ul>
-    <script>
-
-        function SaveToLocalStorage(event){
-            event.preventDefault();
-        const name=event.target.username.value
-        const email=event.target.emailid.value
-        const phonneumber=event.target.phonenumber.value
-        // localStorage.setItem('name',name)
-        // localStorage.setItem('ema',ema)
-        // localStorage.setItem('phonen',phonen)
-const obj={
-    email,
-    name,
-    phonneumber
-    
-}
-localStorage.setItem(obj.email,JSON.stringify(obj))
- showuserscreen(obj)
-        }
-   window.addEventListener("DOMContentLoaded",()=>{
-const localStorageobj=localStorage
-const localStoragekey=Object.keys(localStorageobj)
-
-for(var i=0;i<localStoragekey.length;i++){
-  const key=localStoragekey[i]
-  const userDetailString=localStorageobj[key]
-  const userDSetailObj=JSON.parse(userDetailString)
-  showuserscreen(userDSetailObj)
-}
-   })
-
-   function showuserscreen(user){
-    document.getElementById('email').value=''
-    document.getElementById('username').value=''
-    document.getElementById('phonenumber').value=''
-    if(localStorage.getItem(user.email)!==null){
-removeuserfromscreen(user.email)
-    }
-const parrentNode=document.getElementById('listitem')
-const childHtml=`<li id=${user.email}> ${user.name}-${user.email}
-    <button onclick=deleteuser('${user.email}')> delete user </button>
-    <button onclick=edituserdetail('${user.email}','${user.name}','${user.phonenumber}')> edit user</button>
-        </li>`
-
-        parrentNode.innerHTML=parrentNode.innerHTML+childHtml
-    }
-
-
-//edit user
-   function edituserdetail(emailid,name,phonenumber){
-    document.getElementById('email').value=emailid
-    document.getElementById('username').value=name
-    document.getElementById('phonenumber').value=phonenumber
-    deleteuser(emailid)
-
-   }
-
-
-//deleate user
-function deleteuser(emailid){
-    localStorage.removeItem(emailid)
-    removeuserfromscreen(emailid)
-}
-
-
-//
-
-function removeuserfromscreen(emailid){
-    const parrentNode=document.getElementById('listitem')
-   const childnodetobedeleted=document.getElementById(emailid)
-   if(childnodetobedeleted){
-    parrentNode.removeChild(childnodetobedeleted)
-   }
-}
-
-   
-
-        
-    </script>
-</body>
-</html>
