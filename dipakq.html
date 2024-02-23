@@ -30,3 +30,67 @@ WITH
 output: c16    no_of_amounth  counsler
         100    1              1
 
+
+
+maximum find 
+select c14, c19  from Receipt_Head_Wise1
+WHERE c19=(SELECT max(c19) FROM Receipt_Head_Wise1)
+GROUP BY c14
+
+more than avarage
+select c14, count(*) from Receipt_Head_Wise1
+WHERE c16>(SELECT avg(c16) FROM Receipt_Head_Wise1)
+GROUP BY c14
+
+
+avg base 
+select c14 ,avg(c16) from Receipt_Head_Wise1
+WHERE c16>(SELECT avg(c16) FROM Receipt_Head_Wise1)
+GROUP BY c14
+
+total  admition 
+select c14, COUNT(*) as numberrecipgenrate  
+FROM Receipt_Head_Wise1
+GROUP BY c14
+ORDER BY c14 DESC
+
+bca admision count
+select c14, COUNT(*) as numberrecipgenrate  
+FROM Receipt_Head_Wise1
+WHERE c8='Bachelor Of Commerce-ISBMU'
+GROUP BY c14
+ORDER BY c14 DESC
+
+
+
+maximum recipot done in cource bcom
+SELECT c14, c11, c8, c16
+FROM Receipt_Head_Wise1
+WHERE c8 = 'BCOM-Bachelor of Commerce' 
+AND c16 = (SELECT MAX(c16) 
+           FROM Receipt_Head_Wise1 
+           WHERE c8 = 'BCOM-Bachelor of Commerce');
+
+
+in counsler name nusrat where less amount recipt done bcom
+SELECT c14, c11, c8, c16
+FROM Receipt_Head_Wise1
+WHERE c8 = 'BCOM-Bachelor of Commerce' AND
+c14='Nusrat Zakir Kureshi'
+AND c16 = (SELECT min(c16) 
+           FROM Receipt_Head_Wise1 
+           WHERE c8 = 'BCOM-Bachelor of Commerce' 
+          AND c14='Nusrat Zakir Kureshi');
+
+max count using condition
+SELECT c14,c16 FROM  Receipt_Head_Wise1  
+WHERE c16 in (SELECT c16 FROM Receipt_Head_Wise1 
+              GROUP BY c14 HAVING COUNT(*)> 391)
+
+
+search student name  og vishal sirs count sum same name with all student sum
+SELECT c14, sum(c16) FROM Receipt_Head_Wise1 
+WHERE c11='FADTARE SOUDAGAR NAVNATH'
+GROUP by c14
+
+
