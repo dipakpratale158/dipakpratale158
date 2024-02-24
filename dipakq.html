@@ -93,4 +93,70 @@ SELECT c14, sum(c16) FROM Receipt_Head_Wise1
 WHERE c11='FADTARE SOUDAGAR NAVNATH'
 GROUP by c14
 
+total amounth of each paitiant
+SELECT c11, sum(c16)
+over(partition BY c11 ORDER BY c11) as sumofcounslerwise,
+avg(c16)
+over() as avg_c16
+FROM Receipt_Head_Wise1 
+
+top 3 for highest sum
+SELECT c11, sum(c16)
+over() as total
+FROM Receipt_Head_Wise1 
+ORDER BY c11 DESC LIMIT 3
+
+
+counsler amount gerater than avrage  amounth
+SELECT c16,c14
+FROM Receipt_Head_Wise1  t1
+WHERE c16>(SELECT avg(c16)
+           FROM Receipt_Head_Wise1 t2
+           WHERE t2.c11=t1.c11)
+or
+         
+SELECT * FROM (SELECT *,
+               avg(c16) over(partition by c11)
+               as avg_counslerramounth FROM Receipt_Head_Wise1) AS subqury
+               WHERE c16>avg_counslerramounth
+
+no og occuranses
+SELECT c16, COUNT(c16) 
+FROM Receipt_Head_Wise1
+GROUP BY c16
+HAVING COUNT(c16) > 1
+
+
+most frequly use payment method
+SELECT c28,COUNT(*)
+FROM Receipt_Head_Wise1
+GROUP BY c28
+ORDER BY COUNT(*) DESC
+
+
+most proiffitable course 
+SELECT  c8, c11,c14,round(sum(c16),2) as gross
+FROM Receipt_Head_Wise1 
+ORDER BY gross DESC
+
+
+MULTIPLE GOUP BASEG SUM 
+SELECT c8, c11,c14,sum(c16)
+FROM Receipt_Head_Wise1
+GROUP BY c8, c11,c14
+
+
+MOST USE PAYMENT METHOD which bank maximum use
+SELECT c14 , 
+SUM(CASE WHEN c25='Online Banking' THEN 1 ELSE 0 END)  as "Online Banking",
+SUM(CASE WHEN c25='ISBMU Website' THEN 1 ELSE 0 END)  as "ISBMU Website",
+SUM(CASE WHEN c25='Cheque' THEN 1 ELSE 0 END)  as "Cheque",
+SUM(CASE WHEN c25='IMPS' THEN 1 ELSE 0 END)  as "IMPS",
+SUM(CASE WHEN c25='PhonePe' THEN 1 ELSE 0 END)  as "PhonePe",
+SUM(CASE WHEN c25='CashDeposited' THEN 1 ELSE 0 END)  as "CashDeposited"
+FROM Receipt_Head_Wise1 GROUP BY c14
+
+
+
+
 
