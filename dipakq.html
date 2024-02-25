@@ -157,6 +157,164 @@ SUM(CASE WHEN c25='CashDeposited' THEN 1 ELSE 0 END)  as "CashDeposited"
 FROM Receipt_Head_Wise1 GROUP BY c14
 
 
+SELECT round(avg(c8),2) as avg_counsler,
+c2 FROM samplevaishnavi2
+GROUP BY c8 
+ORDER BY avg_counsler DESC
 
 
+counsler wise count of courses
+SELECT c2,c5, count(c8) as totalcountss
+FROM samplevaishnavi2
+GROUP BY c2,c5
+ORDER BY totalcountss DESC
+
+monthwise hihest count
+SELECT c6,sum(c8) as total_count FROM samplevaishnavi2
+GROUP BY c6
+ORDER BY total_count DESC
+
+hihest count month all
+SELECT c6,sum(c8) as total_count FROM samplevaishnavi2
+GROUP BY c6
+HAVING sum(c8) > ( SELECT avg(c8) FROM samplevaishnavi2)
+
+
+
+pivote table concept
+sum and count of counslerwise 
+SELECT
+c2,
+sum(case WHEN c2='Priti Meghnad' THEN c8 ELSE 0 END) as counslernamepriti,
+sum(case WHEN c2='Nusrat Kureshi' THEN c8 ELSE 0 END) as counslernamenusrat,
+COUNT(c8) as totalcountofcounsler
+FROM samplevaishnavi2
+GROUP BY c2
+ORDER BY c2
+
+piote base on condition 
+SELECT
+c4,c2,c5,
+sum(case WHEN c2 in ('Priti Meghnad','Nusrat Kureshi') THEN c8 ELSE 0 END) as counslernamepriti,
+COUNT(c8) as totalcountofcounsler
+FROM samplevaishnavi2
+GROUP BY c4,c2
+ORDER BY c2
+
+
+
+tally using case
+SELECT
+c1,c4,c2,c5,
+sum(case WHEN c2 in ('Priti Meghnad','Nusrat Kureshi') THEN c8 ELSE 0 END) as counslernamepriti,
+COUNT(c8) as totalcountofcounsler
+
+FROM samplevaishnavi2
+GROUP BY c1,c5
+ORDER BY c2
+
+count each
+SELECT c2,COUNT(*) as countsofcounsler
+FROM samplevaishnavi2
+GROUP BY c2
+
+LAST VALUE how work
+SELECT c2,
+last_value(c2) over(ORDER BY c8)
+FROM samplevaishnavi2
+
+last value return all coulum
+SELECT c2,
+last_value(c2) over(ORDER BY c8 ROWS BETWEEN unbounded preceding AND unbounded following) 
+as lastvalue
+FROM samplevaishnavi2
+
+
+Running Total nd
+ROWS Clause: Syntax and Options
+The purpose of the ROWS clause is to specify the window frame in relation to the current row. The syntax is:
+
+ROWS BETWEEN lower_bound AND upper_bound
+
+The bounds can be any of these five options:
+
+UNBOUNDED PRECEDING – All rows before the current row.
+n PRECEDING – n rows before the current row.
+CURRENT ROW – Just the current row.
+n FOLLOWING – n rows after the current row.
+UNBOUNDED FOLLOWING – All rows after the current row.
+
+RUNNING TOTAL range wise if duplicate first count oll and then same
+SELECT  c8,
+sum(c8) over(ORDER BY c8 RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) 
+as runningtotal
+FROM samplevaishnavi2
+
+
+or
+SELECT C8,
+sum(c8) over(ORDER by c8) as runnningtotal
+FROM samplevaishnavi2
+or
+running sum row wise
+SELECT c8,
+sum(c8) over(ORDER BY c8 ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) 
+as runningtotal
+FROM samplevaishnavi2
+
+
+
+average
+SELECT c8,
+sum(c8) over(ORDER BY c8 ROWS BETWEEN UNBOUNDED PRECEDING AND  UNBOUNDED FOLLOWING) 
+as AVARAGE
+FROM samplevaishnavi2
+
+
+SELECT c8,
+sum(c8) over(ORDER BY c8 ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) 
+as AVARAGE
+
+FROM samplevaishnavi2
+
+
+
+GROUPWISE GROUPDESIDER
+
+SELECT c8,C2,
+ntile(3) over(PARTITION BY C2 ORDER BY c8) 
+as  GROUPSOFSALLARY
+FROM samplevaishnavi2
+
+
+Here are a couple of things to keep in mind when defining window frames with the ROWS clause:
+
+The window frame is evaluated separately within each partition.
+The default option depends on if you use ORDER BY:
+With ORDER BY, the default frame is RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW.
+Without ORDER BY, the default frame is ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING.
+If one of your bounds is a current row, you can skip specifying this bound and use a shorter version of the window frame definition:
+UNBOUNDED PRECEDING is the same as BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW.
+n PRECEDING is the same as BETWEEN n PRECEDING AND CURRENT ROW.
+n FOLLOWING is the same as BETWEEN CURRENT ROW AND n FOLLOWING.
+UNBOUNDED FOLLOWING is the same as BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING.
+
+
+give if ele condition like
+SELECT c2, IIF(c2='Hafsa Shimayela','male','femail')
+FROM samplevaishnavi2
+
+
+
+
+inmysql working
+next 10 rows working
+SELECT * 
+FROM samplevaishnavi2
+ORDER BY c2
+OFFSET 10 ROWS 
+FETCH NEXT 10 ROWS ONLY;
+
+TOP 5 ROW FING IN MYSQL
+SELECT TOP 5 * FROM samplevaishnavi2 ORDER BY c8 
 
