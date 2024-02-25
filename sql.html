@@ -318,3 +318,9 @@ FETCH NEXT 10 ROWS ONLY;
 TOP 5 ROW FING IN MYSQL
 SELECT TOP 5 * FROM samplevaishnavi2 ORDER BY c8 
 
+
+
+datetime
+SELECT c11, DATEADD(day, 1, DATEADD(month, 2, DATEADD(year, 2020 - YEAR(c11), c11)))
+FROM samplevaishnavi2;
+
