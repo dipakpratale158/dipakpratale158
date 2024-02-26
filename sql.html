@@ -324,3 +324,73 @@ datetime
 SELECT c11, DATEADD(day, 1, DATEADD(month, 2, DATEADD(year, 2020 - YEAR(c11), c11)))
 FROM samplevaishnavi2;
 
+
+
+highest amounth in poonam data with rank 1
+WITH t1 AS (
+    SELECT c14, 
+           CAST(CASE WHEN c16='NA' THEN '0' ELSE c16 END as int) as age
+    FROM Receipt_Head_Wise1
+),
+ranking AS (
+    SELECT *, 
+           RANK() OVER(ORDER BY age DESC) AS rnk
+    FROM t1
+    WHERE c14='Poonam Anantrao Raut'
+)
+SELECT * 
+FROM ranking 
+WHERE rnk=1
+
+
+
+top 5 counslers whe done courses that date or online bank throu payment done top 5 emplioy
+WITH t1 AS (
+    SELECT c14, c8, COUNT(1) AS totalf
+    FROM Receipt_Head_Wise1
+    WHERE c31 = '24.08/2022'
+    GROUP BY c14, c8
+  ORDER BY totalf DESC
+),
+t2 AS (
+    SELECT *, DENSE_RANK() OVER (ORDER BY totalf DESC) AS rnk
+    FROM t1
+)
+SELECT c14, c8, totalf
+FROM t2
+WHERE rnk <= 5;
+
+WHO WON MAXIMUM COUSES
+    bcom and bca cources done student list and rank whos maximum courses
+    WITH t1 AS (
+    SELECT c11, c14,c8, COUNT(1) AS totalf
+    FROM Receipt_Head_Wise1
+    WHERE c8 in ('BCA-Bachelor of Computer Applications','BCOM-Bachelor of Commerce')
+    GROUP BY c11, c14  ORDER BY totalf DESC
+),
+t2 AS (
+    SELECT *, DENSE_RANK() OVER (ORDER BY totalf DESC) AS rnk
+    FROM t1
+)
+SELECT c11, c14, c8,totalf
+FROM t2
+
+
+
+
+    delete duplicates
+    
+
+select 
+c14,c8,c11,count(*) as duplicates
+
+FROM Receipt_Head_Wise1
+GROUP BY  c14,c8,c11
+HAVING COUNT(*)>=1;
+DELETE FROM Receipt_Head_Wise1
+WHERE c14 in(SELECT c14 FROM Receipt_Head_Wise1 
+             GROUP BY c14
+             HAVING COUNT(*) > 1);
+
+
+    
