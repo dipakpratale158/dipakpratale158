@@ -393,4 +393,84 @@ WHERE c14 in(SELECT c14 FROM Receipt_Head_Wise1
              HAVING COUNT(*) > 1);
 
 
+
+
+    higher than sallary condition using case 
+    SELECT e.*,
+lag(c16) over (partition by c14 ORDER BY c11) as  previous_counsler,
+case WHEN e.c16 > lag(c16) over (partition by c14 ORDER BY c11) then 'higher than Previous employe'
+WHEN e.c16 > lag(c16) over (partition by c14 ORDER BY c11) then 'lower than Previous employe'
+WHEN e.c16 > lag(c16) over (partition by c14 ORDER BY c11) then 'same than Previous employe'
+end 
+FROM Receipt_Head_Wise1 e
+
+
+    lag 2 and enter valu 0 
+    SELECT e.*,
+lag(c16,2,0) over (partition by c14 ORDER BY c14) as  previous_counsler
+FROM Receipt_Head_Wise1 e
+
+    Top 3 employmen of counsle listr
+    SELECT * FROM (SELECT e.*,
+rank() over(partition by c14 order by c16) as rnk
+FROM Receipt_Head_Wise1 e) x
+where x.rnk<3
+
+    first two employment of ccounsler department
+SELECT * FROM (SELECT e.*,
+row_number() over(partition by c11 order by c14) as rnk
+FROM Receipt_Head_Wise1 e) x
+
+
+
+    max amounth of counsler deopartment each
+    SELECT c14,c16,
+max(c16) over(partition by c14) as Max_amopunth
+FROM Receipt_Head_Wise1
+
+
+    SUBQURY
+
+    max find all counslerwise
+    SELECT c14,c16 from Receipt_Head_Wise1
+WHERE (c14,c16)  in (SELECT c14, max(c16) from Receipt_Head_Wise1 GROUP BY  c14) 
+
+
+    who do not have any student
+
+SELECT c14,c16 from Receipt_Head_Wise1
+WHERE c14 NOT in (SELECT DISTINCT c14 FROM Receipt_Head_Wise1)
+
+
+    who earn more than avg
+    SELECT c14,c16 from Receipt_Head_Wise1 r1
+WHERE c14 >(SELECT avg(c16) FROM Receipt_Head_Wise1 r2  
+           WHERE r2.c16=r1.c16)
+
+
+    if find then 1 othrewise not run
+    
+SELECT c14 from Receipt_Head_Wise1 r1
+WHERE not EXISTS  (SELECT 1 FROM Receipt_Head_Wise1 r2  
+           WHERE r2.c14=r1.c14);
+           
+           SELECT 1 FROM Receipt_Head_Wise1 r2 WHERE r2.c14='Poonam Anantrao Raut';
+
+total amounth and avg   subqury corelated
+SELECT * from (SELECT c14 , sum(c16) as totalamounth
+               FROM Receipt_Head_Wise1
+               GROUP BY  c14)  salse
+               JOIN (sELECT avg(totalamounth) as salse
+                     FROM (SELECT c14 , sum(c16) as totalamounth
+                     FROM Receipt_Head_Wise1
+                              GROUP BY  c14 ) x) avg_salse
+                              on salse.totalamounth> avg_salse.salse
+
+
+give avg hiher then condition
+    SELECT * , (CASE WHEN c16 > ( SELECT avg(c16) FROM Receipt_Head_Wise1)   then 'higher than average'  ELSE NULL END)as remark 
+FROM Receipt_Head_Wise1
+
+    
+          
     
