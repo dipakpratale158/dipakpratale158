@@ -472,5 +472,26 @@ give avg hiher then condition
 FROM Receipt_Head_Wise1
 
     
-          
-    
+   month wise collection       
+ select c2 ,
+sum(case when c6='Jan-2023' then c8 ELSE 0 END ) as jan_2023,
+sum(case when c6='FEB-2023' then c8 ELSE 0 END ) as FEB_2023,
+sum(case when c6='Mar-2023' then c8 ELSE 0 END ) as Mar_2023,
+sum(case when c6='Apr-2023' then c8 ELSE 0 END ) as Apr_2023,
+sum(case when c6='May-2023' then c8 ELSE 0 END ) as May_2023,
+sum(case when c6='Jun-2023' then c8 ELSE 0 END ) as Jun_2023,
+sum(case when c6='Jul-2023' then c8 ELSE 0 END ) as Jul_2023,
+sum(c8) AS total
+FROM Student_List
+GROUP BY c2
+UNION
+SELECT 'total' c2,
+sum(case when c6='Jan-2023' then c8 ELSE 0 END ) as jan_2023,
+sum(case when c6='FEB-2023' then c8 ELSE 0 END ) as FEB_2023,
+sum(case when c6='Mar-2023' then c8 ELSE 0 END ) as Mar_2023,
+sum(case when c6='Apr-2023' then c8 ELSE 0 END ) as Apr_2023,
+sum(case when c6='May-2023' then c8 ELSE 0 END ) as May_2023,
+sum(case when c6='Jun-2023' then c8 ELSE 0 END ) as Jun_2023,
+sum(case when c6='Jul-2023' then c8 ELSE 0 END ) as Jul_2023,
+'' as total
+from Student_List
