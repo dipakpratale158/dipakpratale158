@@ -495,3 +495,62 @@ sum(case when c6='Jun-2023' then c8 ELSE 0 END ) as Jun_2023,
 sum(case when c6='Jul-2023' then c8 ELSE 0 END ) as Jul_2023,
 '' as total
 from Student_List
+
+
+///////////////
+
+    application id diffrent but same name that mense diffrent courcec
+SELECT  m1.c2,m1.c6,m1.c10
+FROM Marksheet_List m1, Marksheet_List m2
+WHERE m1.c6=m2.c6 AND m1.c2!=m2.c2
+
+ratio of couses
+SELECT (COUNT(*) filter(WHERE c9='MBA-Masters in Business Administration')*100.0/COUNT(*)),
+    (COUNT(*) filter(WHERE c9='BCOM-Bachelor of Commerce')*100.0/COUNT(*)) 
+            FROM Marksheet_List;
+   
+   fetch 50% record
+   
+   SELECT * FROM Marksheet_List
+   WHERE c2 <=(SELECT COUNT(c2)/2 FROM Marksheet_List)
+   
+   
+   
+   even%2=0 odd%2=1
+   
+   
+   SELECT R.c4, R.c2,R.c5,M.c10 FROM Receipt_Head_Wise1012024 R
+   INNER JOIN Marksheet_List M ON R.c3=M.c2
+   
+   
+   
+   highest sallary on each project
+   
+   SELECT M.c10, max(R.c8) as maxsal
+   FROM Receipt_Head_Wise1012024 R
+INNER JOIN Marksheet_List M 
+on R.c3=M.c2
+GROUP BY M.c10
+ORDER BY maxsal DESC
+
+
+
+
+SELECT c1,c4,
+sum(case WHEN c2='Vishal Gayakwad' then c8 END) as vishalamout,
+sum(case WHEN c2='Prachi Ukirde' then c8 END) as prachiamounth
+FROM Receipt_Head_Wise1012024
+GROUP BY
+c1
+
+
+most couses done Marksheet_List
+
+SELECT
+R.c2,sum(R.c8) as totalamounthspends,M.c10
+from Receipt_Head_Wise1012024 R
+JOIN Marksheet_List M  on R.c1=M.c2
+GROUP BY R.c1, R.c2
+ORDER by totalamounthspends DESC
+
+
