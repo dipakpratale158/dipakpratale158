@@ -595,7 +595,7 @@ on r1.c14=r2.c14   and r1.c8> r2.c8
 
 
 
-working
+working  complete tommarto
       select  a.c6,,a.c2, a.no_of_uyniq from (
   SELECT x.c6 , x.c2, no_of_uyniq,
   ROW_number() over (partition by c.c6 order by x.no_of_uyniq DESC) as rn from (
