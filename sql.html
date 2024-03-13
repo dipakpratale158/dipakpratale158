@@ -601,4 +601,4 @@ working  complete tommarto
   ROW_number() over (partition by c.c6 order by x.no_of_uyniq DESC) as rn from (
     select p1.c6,p1.c2,COUNT(1) as no_of_uyniq
     from (SELECT DISTINCT to_char(c6,'month') as month,c2 from Student_List18122023) p1  group by p1.c6,p1.c2) x) a 
-    WHERE a.rn<3
+    WHERE a.rn<3 
