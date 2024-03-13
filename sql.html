@@ -553,4 +553,52 @@ JOIN Marksheet_List M  on R.c1=M.c2
 GROUP BY R.c1, R.c2
 ORDER by totalamounthspends DESC
 
+frch duplicate record
+SELECT c8 , c14 FROM(
+  SELECT *,
+  row_number() over (partition by c14 ORDER by c8) as rn
+  FROM Receipt_Head_WiseUPDATED r ORDER by c8) x
+  WHERE x.rn <> 1
 
+      
+second last record fetch
+       SELECT  c14 FROM(
+  SELECT *,
+  row_number() over ( ORDER by c14 DESC) as rn
+  FROM Receipt_Head_WiseUPDATED r ) x
+  WHERE x.rn =2
+
+higest salary or lowest salary in each department
+      SELECT RH.* 
+FROM Receipt_Head_WiseUPDATED R
+join (SELECT *,
+      max(c16) over (partition by c14) as max_sal,
+       min(c16) over (partition by c14) as min_sal
+      FROM Receipt_Head_WiseUPDATED) RH
+      on R.c14=RH.c14  based on application id also
+      and (R.c16=RH.max_sal  or R.c16=RH.min_sal)
+      order by RH.c16
+
+
+fetch the detail of doctor who work in same counsler but diffrent specilisation
+   SELECT r1.c11,r1.c14,r1.c8 
+FROM Receipt_Head_WiseUPDATED r1
+join Receipt_Head_WiseUPDATED r2
+on r1.c14=r2.c14   and r1.c8> r2.c8   
+
+      only coseler name more than 3 times cosecutily 
+      select DISTINCT repeted_name  from(
+  SELECT *, CASE when c14=lead(c14) over(order by c8)  AND
+  c14=lead(c14,2) over(order by c8)
+  then c14 ELSE null end as repeted_name  from Receipt_Head_WiseUPDATED) x
+  WHERE x.repeted_name is not null
+
+
+
+working
+      select  a.c6,,a.c2, a.no_of_uyniq from (
+  SELECT x.c6 , x.c2, no_of_uyniq,
+  ROW_number() over (partition by c.c6 order by x.no_of_uyniq DESC) as rn from (
+    select p1.c6,p1.c2,COUNT(1) as no_of_uyniq
+    from (SELECT DISTINCT to_char(c6,'month') as month,c2 from Student_List18122023) p1  group by p1.c6,p1.c2) x) a 
+    WHERE a.rn<3
