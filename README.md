@@ -81,6 +81,20 @@ Here are some ideas to get you started:
 ![only2018valueareshowing](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/d0de5832-79e4-42a5-b44a-fce9721b6277)
 ![nnested nonnested](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/fafbb496-795f-466e-976e-89db79351c5c)
 ![nexttask](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/1ca7fa76-9b72-46fe-a5aa-e061cb4958fb)
+![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/44f4d24d-b683-464d-848c-8aa6fba5be3b)
+![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/f431fbd5-42ce-4306-9353-1c4f05623c80)
+![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/85c40e38-9c40-43f5-af9e-8b4f7a966f24)
+![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/56803eb2-5f9b-4b1b-9752-6b2ab7453fe2)
+![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/3f137d18-a81a-4e51-aaf1-9055b0dbd03d)
+using calculate sum and withou using calculate only sum then result 14356   using calculatwe this sum4
+![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/797c5278-bee5-4ef8-bf8f-285d237a14c9)
+contxtramnsition using % side , separeted thousand value
+![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/5f552285-abf4-4343-8e1d-677cafe5ad71)
+evaluated order
+![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/a1303032-745e-4892-8fb5-0b0e39a0706b)
+![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/ee44e362-8226-49b1-8ba6-308c09eb372c)
+
+
 
 
 
