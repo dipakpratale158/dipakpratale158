@@ -93,6 +93,37 @@ contxtramnsition using % side , separeted thousand value
 evaluated order
 ![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/a1303032-745e-4892-8fb5-0b0e39a0706b)
 ![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/ee44e362-8226-49b1-8ba6-308c09eb372c)
+![454calender](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/9febb7b3-9a94-44d3-86aa-64d8ee2478c0)
+![454calenderfiscoyesar](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/eec6cda2-ab41-4d51-89d1-e8531fe1b098)
+![454calenderrr](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/fba5f8f5-a7c4-4a04-8519-956bbbc17a52)
+![454calenderrrr](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/1e80a323-2621-4411-9758-cb5ef6d942b9)
+![454callll](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/63860e6e-387a-47f3-810f-536e9d6a2a16)
+![4544clen](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/7b747c26-b173-411a-9c2d-187dcb72a7c3)
+![ADDCOLOUM](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/8b9c0954-abaa-45f7-926f-6ac3ad04150c)
+![ADDCOLOUMNDAXQUERY](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/5e46d157-4872-4fbe-942b-a0e50f852b1a)
+![addingdynymiclable](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/925ea3df-333d-4da2-b08c-c94555c31a3b)
+![ALL BAKED](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/42c737d8-6118-46a9-8be2-1af18a4110fc)
+![ALL EXCEPT WITH EXAMPLE](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/59cd17fb-43ca-4669-b3e4-9260dc62c4f8)
+![ALL EXCEPT](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/4e767c4c-c069-40e9-a10f-87eb6b97dd88)
+![ALLEXCEPT](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/03dc52ab-d3eb-417d-8a5c-c3554b615ea3)
+
+![assigncrossfilter](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/bf79a4a2-19da-4334-bc56-99f532c6bb6e)
+
+![ALLEXEPTUING TRANSACTION DATE](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/91440635-a502-44e1-9a2a-8b77160e2b33)
+
+![ALLEXCEPTEXAMPLE](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/c903ec0c-d0a2-408e-9b59-c265b2827093)
+
+![ALLSELECTED FUNCTION](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/772b3675-5fce-40ee-b9f0-f546926850ac)
+
+![assdateformat](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/a15be52e-f180-4bf5-81a5-b085b189b7f6)
+
+
+
+![ASSIGNMENT3](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/0b1022f2-1f15-4bc8-9946-5c093c438fe0)
+![assignment](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/458bfe2d-f1d8-481b-913a-0ab326dfcb94)
+![ASSIGNMENT INTERSECT](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/2dfced6a-efec-4e23-8953-570f384c562a)
+
+![assignmenttreat](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/e5599422-96a3-4524-8d40-30ecd0018a68)
 
 
 
