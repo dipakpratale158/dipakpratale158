@@ -124,21 +124,6 @@ evaluated order
 ![automaticalydatetable](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/6563bb44-d64e-4ad4-8a80-c9046ea9d8fa)
 ![ASSSINGMENT SUMMERISE](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/0f3abff9-304c-4215-9462-3acb0082cedf)
 ![asss454calendeer](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/3fa9a3a8-7f0b-4b94-b967-e77725d266d8)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ![INTERSECTIONEXAMPLE](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/7de7edcb-6a84-4e14-9af2-aa5d358a1e10)
 ![INTERSECTION](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/dbb5a199-a700-4240-b6b2-ebd54ab61bc8)
 ![IMP  NOTE CROSSJOIN](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/4dcc9fca-adda-41c2-aaad-9434e45b6f2d)
