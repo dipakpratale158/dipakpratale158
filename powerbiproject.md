@@ -1,3 +1,6 @@
+POWER BI PROJECT LINK:
+https://app.powerbi.com/groups/me/reports/d0e1894f-7a5b-4726-87c4-3399ce8a94c1/ReportSection?experience=powerbi&bookmarkGuid=Bookmarke6586779d832331db2ab
+
 
 ** power bi project dashboard page** include menu bar marksheet data, day wise collection data target wise report and npf detail view![menupage](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/4647ae78-a460-43de-a129-589011905f71)
 
@@ -42,15 +45,15 @@ Detail Salse Report View Graphicaly
 
 
 
-TARGET COMPLETED OR NOT CHECK GAUGE CARD
+**TARGET COMPLETED OR NOT CHECK GAUGE CARD**
 ![targetwise counsler report](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/0f853f9a-9732-4077-a35a-259fd77c36d3)
 
 
-Day wise collection 
+**Day wise collection** 
 ![daywise collection](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/74576571-f6c9-4059-9b97-ed547d015f14)
 
 
-npf data select cousler name
+**npf data select cousler name**
 the select table wise view or grafical view a
 and after GO button 
 
@@ -59,11 +62,11 @@ table format view
 ![tableformat](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/c90fe0ff-9964-4610-b9eb-11226d227768)
 
 
-usind dax qury making table
+**usind dax qury making table**
 ![dax query](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/a1f4eebb-88db-4615-88c5-6998c3d9409c)
 
 
-TOOLTIP VIEW  when hover counsler data showing smalll window each
+**TOOLTIP VIEW**  when hover counsler data showing smalll window each
 ![tooltip1](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/1c329b40-116c-46fb-9622-ec867db10e81)
 ![tooltip  2](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/e4bd10b2-196e-41bd-8d89-846ebfca2f90)
 
