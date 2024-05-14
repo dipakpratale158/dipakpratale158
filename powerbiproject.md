@@ -1,29 +1,37 @@
 
- power bi project dashboard page include menu bar marksheet data, day wise collection data target wise report and npf detail view![menupage](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/4647ae78-a460-43de-a129-589011905f71)
+** power bi project dashboard page** include menu bar marksheet data, day wise collection data target wise report and npf detail view![menupage](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/4647ae78-a460-43de-a129-589011905f71)
 
  after clicking menu button showing filter option which is made saptly iconwise and then after clicking filter image showing data year wise and counsler wise then also after clicking back button go to main page
+ 
 ![filter dropdown](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/5b061194-942f-4c1c-9fa8-653ebe9b7a78)
 
 ![filter clicking view](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/ae18c3fc-ea96-42e9-8ec4-42431cb3dea1)
 
-MARKSHEET DATA
+
+
+**MARKSHEET DATA**
 after clicking marksheet data easyly search marksheet recived data and print data and degree/tcmc/migration in one pace. eg search student name in boyh marksheet recevd or print information in one place
 ![marksheet data](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/f0819230-1348-4053-8eb5-e766e2ac16b5)
 
 
 
 npf data all social media platform like watsapp , chat ,facebook, instagram , calling data leads report when i select ringging feild so all report showing counslerwise
+
 ![npf lead poertal](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/16b0fc5f-ab07-486b-b936-bb00d93e9f7e)
 
-COLLECTIO REPORT VIEW 
+
+**COLLECTIO REPORT VIEW** 
 counsler wise collection report drill up month wise , yerly , quaterly,in table format or line format viw
 in card showing monthly report vs priviouslyly report count showing if positive showing green if negative showing red
 Monthaly courses cell report
+
 ![image](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/2a413622-829d-4dc3-82dd-89b7f84a40c2)
 
 ![monthwise](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/e1a892c9-795d-46bf-b423-290c62cf36f9)
 
-SALSE REPORT FRESH COLLECTION , PDC collection showing councsler wise fresh admission report showing, and top counsle sum showing card
+
+
+**SALSE REPORT FRESH COLLECTION , PDC** collection showing councsler wise fresh admission report showing, and top counsle sum showing card
 ![counslerwisereportsalse](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/cdae50ff-eccb-4628-bd56-897afc2801f9)
 
 ![salllll](https://github.com/dipakpratale158/dipakpratale158/assets/112299138/ba866211-9179-42b8-b66d-c2c5f52d2165)
