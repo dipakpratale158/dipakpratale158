@@ -1,6 +1,6 @@
 Power BI Sales Dashboard – Vistaar Project
 Role: Power BI Developer /Data Analyst
-Tools Used: Power BI, DAX (Data Analysis Expressions), Python, SQL, Excel,ETL,Data modeling 
+Tools Used: Power BI, DAX (Data Analysis Expressions), Python, SQL, Excel,ETL,Data modeling , power pivote
 
 Project Description:
 Designed and implemented an interactive Power BI dashboard to visualize and analyze sales performance for the Vistaar project, focusing on key metrics such as total sales, product margins, regional performance, and dealer performance. The dashboard enabled sales managers to track performance, identify trends, and make data-driven decisions. Additionally, implemented automation for generating regional sales reports using Python.
